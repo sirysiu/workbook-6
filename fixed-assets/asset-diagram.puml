@@ -1,0 +1,57 @@
+@startuml
+class com.pluralsight.asset.CreditCard {
++ void charge()
++ void pay()
+}
+
+class com.pluralsight.asset.Portfolio {
+~ String name
+~ String owner
+~ ArrayList<FixedAsset> assets
++ ArrayList<FixedAsset> add(FixedAsset)
++ double getValue()
+}
+
+
+class com.pluralsight.asset.House {
+~ int yearBuilt
+~ int squareFeet
+~ int bedrooms
++ double getValue()
+}
+
+
+class com.pluralsight.asset.BankAccount {
++ void withdraw()
++ void deposit()
+}
+
+class com.pluralsight.asset.Gold {
+~ double weight
++ double getValue()
+}
+
+
+class com.pluralsight.asset.Jewelry {
+~ double karat
++ double getValue()
+}
+
+
+interface com.pluralsight.asset.Valuable {
++ double getValue()
+}
+
+abstract class com.pluralsight.asset.FixedAsset {
+~ String name
+~ double marketValue
++ double getValue()
+}
+
+
+
+
+com.pluralsight.asset.FixedAsset <|-- com.pluralsight.asset.House
+com.pluralsight.asset.FixedAsset <|-- com.pluralsight.asset.Gold
+com.pluralsight.asset.FixedAsset <|-- com.pluralsight.asset.Jewelry
+@enduml
